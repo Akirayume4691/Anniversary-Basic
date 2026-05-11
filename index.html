@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anniversary Basic</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <audio id="bgMusic" loop><source src="music2.mp3" type="audio/mpeg" /></audio>
+
+  <div class="romantic-bg">
+    <span class="heart h1">♡</span><span class="heart h2">✦</span><span class="heart h3">♡</span>
+    <span class="heart h4">✧</span><span class="heart h5">♡</span>
+  </div>
+
+  <main class="app">
+    <section class="page active" id="introPage">
+      <div class="card">
+        <p class="label">Anniversary Basic</p>
+        <div class="love-orb">💖</div>
+        <h1>Our Little<br><span>Anniversary Story</span></h1>
+        <p class="lead">A simple romantic surprise made with love, memories, and one soft message.</p>
+        <button class="main-btn" onclick="startExperience()">Open Our Memory ✨</button>
+      </div>
+    </section>
+
+    <section class="page" id="messagePage">
+      <div class="card">
+        <p class="label">A Small Message</p>
+        <h2>For You 💌</h2>
+        <div class="type-box"><span id="typewriter"></span><span class="cursor">|</span></div>
+        <div class="actions"><button class="small-btn ghost" onclick="prevPage()">Back</button><button class="small-btn" onclick="nextPage()">See Memories →</button></div>
+      </div>
+    </section>
+
+    <section class="page" id="galleryPage">
+      <div class="card">
+        <p class="label">Sweet Memories</p>
+        <h2>Moments We Keep</h2>
+        <p class="hint">Tap a photo to open it.</p>
+        <div class="memory-grid">
+          <button class="memory-photo" data-index="0"><img src="images/photo1.jpg" alt="Memory 1"></button>
+          <button class="memory-photo" data-index="1"><img src="images/photo2.jpg" alt="Memory 2"></button>
+          <button class="memory-photo" data-index="2"><img src="images/photo3.jpg" alt="Memory 3"></button>
+          <button class="memory-photo" data-index="3"><img src="images/photo4.jpg" alt="Memory 4"></button>
+        </div>
+        <div class="actions"><button class="small-btn ghost" onclick="prevPage()">Back</button><button class="small-btn" onclick="nextPage()">Final Wish →</button></div>
+      </div>
+    </section>
+
+    <section class="page" id="finalPage">
+      <div class="card">
+        <div class="love-orb small">💝</div>
+        <p class="label">Final Wish</p>
+        <h2>Happy Anniversary</h2>
+        <p class="lead">May our memories stay soft, our bond stay strong, and our love keep growing beautifully.</p>
+        <button class="main-btn" onclick="replay()">Replay Memory ✨</button>
+      </div>
+    </section>
+  </main>
+
+  <div class="lightbox" id="lightbox">
+    <button class="close" onclick="closeLightbox()">×</button>
+    <button class="nav prev" onclick="changePhoto(-1)">‹</button>
+    <img id="lightboxImg" src="" alt="Opened memory" />
+    <button class="nav next" onclick="changePhoto(1)">›</button>
+    <p id="caption">Memory 01</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
